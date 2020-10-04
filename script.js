@@ -10,26 +10,19 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-
 let questions = [];
 
-fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10")
-.then(res => {
-    return res.json();
-})
-.then(loadedQuestions => {
-   questions = loadedQuestions;
 
-    //console.log(choices);
-    //console.log(questions);
-        
-})
+async function fetchQuestions() {
+    let res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
+    
+    let questions = await res.json();
+    console.log(questions[2]);
+}
+
+fetchQuestions();
 
 
-
-
-
-console.log(choices);
 
 
 
