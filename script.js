@@ -10,18 +10,20 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+
 let questions = [];
 
-
-async function fetchQuestions() {
-    let res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
-    
-    let questions = await res.json();
-    console.log(questions[2]);
-}
-
-fetchQuestions();
-
+fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10")
+.then(res => {
+    return res.json();
+})
+.then(loadedQuestions => {
+    questions = loadedQuestions;
+    //console.log(choices);
+    //console.log(questions);
+    //console.log(questions[2].answers.answer_a);
+    startGame();
+})
 
 
 
@@ -43,14 +45,24 @@ getNewQuestion = () => {
     questionCounter++;
     question_counter_text.innerText = questionCounter + "/" + max_questions;
 
-    let questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerHTML = currentQuestion.question;
 
+    
+
     choices.forEach(choice => {
-        let letter = choice.dataset["letter"];
-        choice.innerText = currentQuestion["answer_" + letter];
-        //console.log(currentQuestion);
+        
+        const letters = choice.dataset["letter"];
+
+        console.log(letters);
+        
+        //const answers = Array.from(currentQuestion.answers);
+
+        
+        //console.log(answers);
+        //const number = choice.dataset["number"];
+        //choice.innerText = currentQuestion.answers.answer + letters; 
     })
 
     availableQuestions.splice(questionIndex, 1);
