@@ -19,8 +19,9 @@ fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQ
 })
 .then(loadedQuestions => {
     questions = loadedQuestions;
-    console.log(choices);
+    //console.log(choices);
     console.log(questions);
+    console.log(questions[2].answers.answer_a);
     startGame();
 })
 
@@ -49,8 +50,9 @@ getNewQuestion = () => {
     question.innerHTML = currentQuestion.question;
 
     choices.forEach(choice => {
-        const number = choice.dataset["number"];
-        choice.innerText = currentQuestion["choice" + number];
+        
+        //const number = choice.dataset["number"];
+        choice.innerText = questions[2].answers.answer_a;//currentQuestion["choice" + number];
     })
 
     availableQuestions.splice(questionIndex, 1);
