@@ -18,8 +18,9 @@ fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQ
     return res.json();
 })
 .then(loadedQuestions => {
-    console.log(loadedQuestions);
     questions = loadedQuestions;
+    console.log(choices);
+    console.log(questions);
     startGame();
 })
 
