@@ -18,12 +18,18 @@ fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQ
     return res.json();
 })
 .then(loadedQuestions => {
-    questions = loadedQuestions;
-    console.log(choices);
-    console.log(questions);
-    startGame();
+   questions = loadedQuestions;
+
+    //console.log(choices);
+    //console.log(questions);
+        
 })
 
+
+
+
+
+console.log(choices);
 
 
 
@@ -44,13 +50,14 @@ getNewQuestion = () => {
     questionCounter++;
     question_counter_text.innerText = questionCounter + "/" + max_questions;
 
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    let questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerHTML = currentQuestion.question;
 
     choices.forEach(choice => {
-        const number = choice.dataset["number"];
-        choice.innerText = currentQuestion["choice" + number];
+        let letter = choice.dataset["letter"];
+        choice.innerText = currentQuestion["answer_" + letter];
+        //console.log(currentQuestion);
     })
 
     availableQuestions.splice(questionIndex, 1);
