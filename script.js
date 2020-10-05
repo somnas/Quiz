@@ -18,7 +18,7 @@ async function fetchData() {
     const data = await res.json();
     
 
-    console.log(data);
+    console.log(data.results.questions);
 }
     
 fetchData();
