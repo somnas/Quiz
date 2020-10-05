@@ -17,12 +17,19 @@ async function fetchData() {
     const res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10")
     const data = await res.json();
     
-    questions = data.map(loadedQuestion => {
-        const formattedQuestion = {
-            question: loadedQuestion.question            
-       };
-       console.log(formattedQuestion.question);
-    })
+      questions = data.map(loadedQuestions => {
+        const formattedQuestions = {
+            question: loadedQuestions            
+       }; 
+
+    
+    
+    let correctAnswers = Object.values(formattedQuestions.question.correct_answers);
+
+    console.log(correctAnswers);
+       
+       //console.log(typeof formattedQuestions.question.correct_answers);
+    }) 
 
     
 
