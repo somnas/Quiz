@@ -1,4 +1,4 @@
-let question = document.getElementById("question");
+/* let question = document.getElementById("question");
 let choices = Array.from(document.getElementsByClassName("choice-text"));
 let correct_bonus = 10;
 let max_questions = 3;
@@ -13,6 +13,15 @@ let availableQuestions = [];
 
 let questions = [];
 
+(async fetchData() 
+    let url = "https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10";
+    let data = await (await fetch(url)).json();
+    data = questions;
+    console.log(data);
+
+
+fetchData();
+
 fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10")
 .then(res => {
     return res.json();
@@ -20,12 +29,12 @@ fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQ
 .then(loadedQuestions => {
     questions = loadedQuestions;
     //console.log(choices);
-    //console.log(questions);
+    
     //console.log(questions[2].answers.answer_a);
     startGame();
-})
+}) 
 
-
+console.log(questions);
 
 
 
@@ -39,9 +48,9 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-    /* if(availableQuestions.length === 0 || questionCounter >= max_questions) {
+    if(availableQuestions.length === 0 || questionCounter >= max_questions) {
         return window.location.assign("/end.html");
-    } */
+    } 
     questionCounter++;
     question_counter_text.innerText = questionCounter + "/" + max_questions;
 
@@ -93,13 +102,23 @@ choices.forEach(choice => {
         
         
     })
-})
+}) */
 
 
+class Game {
 
+}
 
+class Question {
 
+}
 
+class Questions {
 
+}
+
+class Score {
+    
+}
 
 
