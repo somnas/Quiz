@@ -14,18 +14,21 @@ let availableQuesions = [];
 let questions = [];
 
 fetch(
-    'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple'
+    "https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10"
 )
     .then((res) => {
         return res.json();
     })
     .then((loadedQuestions) => {
         questions = loadedQuestions.results.map((loadedQuestion) => {
-            const formattedQuestion = {
-                question: loadedQuestion.question,
+
+
+            
+            /* const formattedQuestion = {
+                question: loadedQuestion.question, */
             };
 
-            const answerChoices = [...loadedQuestion.incorrect_answers];
+            /* const answerChoices = [...loadedQuestion.incorrect_answers];
             formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
             answerChoices.splice(
                 formattedQuestion.answer - 1,
@@ -37,7 +40,7 @@ fetch(
                 formattedQuestion['choice' + (index + 1)] = choice;
             });
 
-            return formattedQuestion;
+            return formattedQuestion; */
         });
 
         startGame();
@@ -56,7 +59,7 @@ startGame = () => {
     availableQuesions = [...questions];
     getNewQuestion();
     game.classList.remove('hidden');
-    loader.classList.add('hidden');
+    //loader.classList.add('hidden');
 };
 
 getNewQuestion = () => {
@@ -66,9 +69,9 @@ getNewQuestion = () => {
         return window.location.assign('/end.html');
     }
     questionCounter++;
-    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    //progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
     //Update the progress bar
-    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+    //progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
