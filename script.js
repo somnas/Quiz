@@ -114,11 +114,21 @@ class Question {
 }
 
 class Questions {
+    constructor() {
+        
+        async fetchData() 
+            await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10")
+            .then(res => res.json())
+            .then(data => questions = Array.from(data));
+            console.log(questions);
+        
 
+    }
+    
 }
 
 class Score {
-    
+
 }
 
 
