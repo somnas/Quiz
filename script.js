@@ -16,9 +16,10 @@ let questions = [];
 async function fetchData() {
     const res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10")
     const data = await res.json();
+    const {answers} = data
     
 
-    console.log(data.results.questions);
+    console.log(answers);
 }
     
 fetchData();
