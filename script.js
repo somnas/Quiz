@@ -15,29 +15,28 @@ let availableQuesions = []; */
 
 
 
- async function fetchData() {
+async function fetchData(url) {
+    //let url = ;
+    const res = await fetch(url)
+    const data = await res.json();
+   
+    return data;
+}
+       
+    
+    
 
-        try {
-            const res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
-            const data = await res.json();
-        
-            data.forEach((object) => {
-            object.isCurrentQuestion = false;
-            object.playerChoice = object.correct_answers;
-            
-            for (const value in object.playerChoice) {
-                object.playerChoice[value] = "false";
-                }  
-            });  
-            } catch (error) {
-                console.log(error);
-            }
-        data[0].isCurrentQuestion = true;
-        this.currentQuestion = data[0];
-        this.array = data;
-        return data;
-        
-    }
+
+
+async function loadQuestions() {
+    let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
+
+    
+    console.log(loadedQuestions);
+
+}
+
+loadQuestions();
 
 
 
