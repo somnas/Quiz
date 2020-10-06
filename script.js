@@ -13,33 +13,49 @@ let availableQuesions = [];
 
 
 
+
+
 async function fetchData() {
     const res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10")
     const data = await res.json();
-    
-      questions = data.map(loadedQuestions => {
-        const formattedQuestions = {
-            question: loadedQuestions            
-       }; 
 
     
     
-    let correctAnswers = Object.values(formattedQuestions.question.correct_answers);
+    /* data.forEach((object) => {
+        object.isCurrentQuestion = false;
+        object.playerChoice = JSON.parse(
+            JSON.stringify(object.correct_answers)
+        );
+        for (const value in object.playerChoice) {
+            object.playerChoice[value] = "false";
+        }
 
-    console.log(correctAnswers);
+        console.log(object);
+        
+    }); */ 
+
+      //questions = data.map(loadedQuestions => {
+       // const formattedQuestions = [
+        //    /*question:*/ loadedQuestions            
+       // ];  
+
        
-       //console.log(typeof formattedQuestions.question.correct_answers);
-    }) 
 
+    //Skriv array-funktion (filter?) som filtrerar ut korrekt svarsalternativ
     
+    //Skriv array-funktion (map?) som formaterar svaren från answer_b_correct: false till något bättre
+        
+       //const formatQName = formattedQuestions.map(function())
+
+    //let correctAnswers = Object.entries(formattedQuestions.question.correct_answers);
+
+   // })  
 
     /* console.log(data);
     console.log(data[0].question);
     console.log(data[0].answers);
     console.log(data[0].answers.answer_a);
     console.log(data.length); */
-
-    
 
     //let questions = [];
 
