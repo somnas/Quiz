@@ -16,24 +16,22 @@ let availableQuesions = [];
 
 
 async function fetchData() {
-    const res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10")
+    const res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=1")
     const data = await res.json();
 
+   
+
     
-    
-    /* data.forEach((object) => {
+     data.forEach((object) => {
         object.isCurrentQuestion = false;
-        object.playerChoice = JSON.parse(
-            JSON.stringify(object.correct_answers)
-        );
-        for (const value in object.playerChoice) {
-            object.playerChoice[value] = "false";
-        }
-
-        console.log(object);
+        object.playerChoice = object.correct_answers;
         
-    }); */ 
+         for (const value in object.playerChoice) {
+            object.playerChoice[value] = "false";
+        }  
+    });  
 
+    
       //questions = data.map(loadedQuestions => {
        // const formattedQuestions = [
         //    /*question:*/ loadedQuestions            
