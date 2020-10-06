@@ -14,13 +14,8 @@ let availableQuesions = []; */
 
 
 
-class Questions {
-    constructor() {
-        this.currentQuestion = {};
-        
-    }
 
-    async fetchData() {
+ async function fetchData() {
 
         try {
             const res = await fetch("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
@@ -43,11 +38,10 @@ class Questions {
         return data;
         
     }
-}
 
-let questions = new Questions();
 
-console.log(questions);
+
+
         
 
       //questions = data.map(loadedQuestions => {
