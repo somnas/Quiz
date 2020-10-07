@@ -32,9 +32,16 @@ async function loadQuestions() {
     let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
 
     let question_text = document.getElementById("question");
+    let answers_text = Array.from(document.getElementsByClassName("choice-text"));
+    let load_quest_arr = Array.from((Object.values(loadedQuestions)))
     question_text.innerHTML = loadedQuestions[0].question;
-    console.log(loadedQuestions[0]);
+    
+    answers_text.forEach(function(answer) {
+        answer.added = true;
+        
+    })
 
+    console.log(answers_text);
 }
 
 loadQuestions();
