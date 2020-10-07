@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 class LoadQuestions {
 
+    
+
+}
+
     async function fetchData(url) {
         //let url = ;
         const res = await fetch(url)
@@ -34,7 +38,3 @@ class LoadQuestions {
         }
     
     }
-
-
-
-
