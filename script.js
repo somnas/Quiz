@@ -41,7 +41,12 @@ async function loadQuestions() {
         
     })
 
-    console.log(answers_text);
+    
+
+    for(let i = 0; i < loadedQuestions.length; i++) {
+        console.log(loadedQuestions[i].answers);
+    }
+
 }
 
 loadQuestions();
