@@ -4,9 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     loadQuestions();
 })
 
-class LoadQuestions {
+//Create a question counter (next question=++, previous question=--)
+//Display current question through question counter "/" loadedQuestions.length
+//Display correct question by using i = question counter - 1 in loadedQuestions[i].question
+//Same as above but for answers
+//For the answers, use dataset to spread/assign the answers
+//Use if-statements to hide answers = null
 
-    
+class LoadQuestions {
 
 }
 
