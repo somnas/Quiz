@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-   
 
     let playBtn = document.getElementById("playBtn");
     playBtn.addEventListener("click", newPlayer);
@@ -9,12 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
        //let player_1 = 
        new Player;
        
-       
     }
     
 })
-
-
 
 class Player {
     constructor() {
