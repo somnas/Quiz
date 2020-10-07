@@ -31,8 +31,9 @@ async function fetchData(url) {
 async function loadQuestions() {
     let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
 
-    
-    console.log(loadedQuestions);
+    let question_text = document.getElementById("question");
+    question_text.innerHTML = loadedQuestions[0].question;
+    console.log(loadedQuestions[0]);
 
 }
 
