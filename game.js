@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     new LoadQuestions();
     document.getElementById("display-name").innerHTML = localStorage.getItem("player");
-
+    loadQuestions();
 })
 
 class LoadQuestions {
@@ -26,15 +26,18 @@ class LoadQuestions {
         let load_quest_arr = Array.from((Object.values(loadedQuestions)))
         question_text.innerHTML = loadedQuestions[0].question;
         
+        
         answers_text.forEach(function(answer) {
             answer.added = true;
             
         })
     
         
-    
-        for(let i = 0; i < loadedQuestions.length; i++) {
-            console.log(loadedQuestions[i].answers);
-        }
+        //Iterate through all ten loaded questions
+       /*  for(let i = 0; i < loadedQuestions.length; i++) { 
+            let answers_arr = [];
+            answers_arr.push(loadedQuestions[i].answers);
+            console.log(answers_arr);
+        } */
     
     }
