@@ -35,9 +35,6 @@ class LoadQuestions {
         let i = question_counter.innerHTML
         let question_text = document.getElementById("question");
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
-        
-        
-        //answers_text[2].innerHTML = "hej";
     
         let load_answ_arr = (Object.values(loadedQuestions[i-1].answers));
         console.log(load_answ_arr);
@@ -47,7 +44,7 @@ class LoadQuestions {
         
         for(i = 0; i < load_answ_arr.length; i++) {
             answers_text[i].innerHTML = load_answ_arr[i];
-            console.log(i);
+            //add if-statement to hide empty choices
         }
  
     
