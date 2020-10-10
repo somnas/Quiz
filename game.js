@@ -3,7 +3,12 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("display-name").innerHTML = localStorage.getItem("player");
     loadQuestions();
     
-
+    let choice1 = document.getElementById("choice1");
+    let choice2 = document.getElementById("choice2");
+    let choice3 = document.getElementById("choice3");
+    let choice4 = document.getElementById("choice4");
+    let choice5 = document.getElementById("choice5");
+    let choice6 = document.getElementById("choice6");
     
 })
 
@@ -37,8 +42,6 @@ class LoadQuestions {
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
     
         let load_answ_arr = (Object.values(loadedQuestions[i-1].answers));
-        console.log(load_answ_arr);
-        console.log(answers_text);
      
         question_text.innerHTML = loadedQuestions[i-1].question;   
         
@@ -47,5 +50,7 @@ class LoadQuestions {
             //add if-statement to hide empty choices
         }
  
-    
+        
+        console.log(loadedQuestions[0].answers.answer_a);
+        console.log(loadedQuestions);
     }
