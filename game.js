@@ -38,6 +38,14 @@ class LoadQuestions {
         let load_corr_answ_arr = (Object.values(loadedQuestions[i-1].correct_answers));
         curr_question = loadedQuestions[i-1];
         let answer_obj = {};
+        let user_answers = {
+            answer_a: false,
+            answer_b: false, 
+            answer_c: false,
+            answer_d: false,
+            answer_e: false,
+            answer_f: false
+        }
         answer_obj = loadedQuestions[0].answers
 
         //console.log(answer_obj);
@@ -56,6 +64,7 @@ class LoadQuestions {
 
         //console.log(answer_obj);
         console.log(curr_question);
+        console.log(user_answers);
         //console.log(load_corr_answ_arr);
         //console.log(load_answ_arr);
         //console.log(loadedQuestions);
