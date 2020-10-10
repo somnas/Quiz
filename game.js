@@ -37,21 +37,21 @@ class LoadQuestions {
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
         
         
-        //answers_text[2].innerHTML = "hej";
+        answers_text[2].innerHTML = "hej";
     
         let load_answ_arr = (Object.values(loadedQuestions[i-1].answers));
-        //console.log(load_answ_arr);
+        console.log(load_answ_arr);
 
-        //console.log(answers_text);
+        console.log(answers_text);
      
         question_text.innerHTML = loadedQuestions[i-1].question;        
         //answers_text.innerHTML = [...load_answ_arr[i-1]]; 
 
-        answers_text.forEach(answer => {
+       /*  answers_text.forEach(answer => {
             const letter = answers_text.dataset["letter"];
             //answers_text.innerHTML = loadedQuestions[1].
             console.log(letter);
-        })
+        }) */
 
         /* for(let i = question_counter.innerHTML; i < loadedQuestions.length; i++) {
             answers_text[i-1].push(loadedQuestions[i-1].answers)
