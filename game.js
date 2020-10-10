@@ -21,7 +21,7 @@ class LoadQuestions {
 }
 
     async function fetchData(url) {
-        //let url = ;
+        
         const res = await fetch(url)
         const data = await res.json();
        
@@ -37,14 +37,18 @@ class LoadQuestions {
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
         
         
-        answers_text[2].innerHTML = "hej";
+        //answers_text[2].innerHTML = "hej";
     
         let load_answ_arr = (Object.values(loadedQuestions[i-1].answers));
         console.log(load_answ_arr);
-
         console.log(answers_text);
      
-        question_text.innerHTML = loadedQuestions[i-1].question;        
+        question_text.innerHTML = loadedQuestions[i-1].question;   
+        
+        for(i = 0; i < load_answ_arr.length; i++) {
+            answers_text[i].innerHTML = load_answ_arr[i];
+            console.log(i);
+        }
         //answers_text.innerHTML = [...load_answ_arr[i-1]]; 
 
        /*  answers_text.forEach(answer => {
