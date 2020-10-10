@@ -33,9 +33,14 @@ class LoadQuestions {
         let i = question_counter.innerHTML
         let question_text = document.getElementById("question");
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
-    
+        let curr_question = {};
         let load_answ_arr = (Object.values(loadedQuestions[i-1].answers));
         let load_corr_answ_arr = (Object.values(loadedQuestions[i-1].correct_answers));
+        curr_question = loadedQuestions[i-1];
+        let answer_obj = {};
+        answer_obj = loadedQuestions[0].answers
+
+        //console.log(answer_obj);
      
         question_text.innerHTML = loadedQuestions[i-1].question;   
         
@@ -44,11 +49,16 @@ class LoadQuestions {
             //add if-statement to hide empty choices
         }
  
-        
-        
+        choice1.addEventListener("click", function() {
+            console.log("hello");
+            answer_obj.answer_a_correct = true;
+        })
+
+        //console.log(answer_obj);
+        console.log(curr_question);
         //console.log(load_corr_answ_arr);
         //console.log(load_answ_arr);
-        //console.log(loadedQuestions[0].answers);
+        //console.log(loadedQuestions);
         
     }
 
