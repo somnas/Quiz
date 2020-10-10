@@ -42,6 +42,7 @@ class LoadQuestions {
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
     
         let load_answ_arr = (Object.values(loadedQuestions[i-1].answers));
+        let load_corr_answ_arr = (Object.values(loadedQuestions[i-1].correct_answers));
      
         question_text.innerHTML = loadedQuestions[i-1].question;   
         
@@ -51,6 +52,9 @@ class LoadQuestions {
         }
  
         
-        console.log(loadedQuestions[0].answers.answer_a);
-        console.log(loadedQuestions);
+        
+        console.log(load_corr_answ_arr);
+        console.log(load_answ_arr);
+        //console.log(loadedQuestions[0].answers);
+        
     }
