@@ -49,33 +49,6 @@ class LoadQuestions {
             answers_text[i].innerHTML = load_answ_arr[i];
             console.log(i);
         }
-        //answers_text.innerHTML = [...load_answ_arr[i-1]]; 
-
-       /*  answers_text.forEach(answer => {
-            const letter = answers_text.dataset["letter"];
-            //answers_text.innerHTML = loadedQuestions[1].
-            console.log(letter);
-        }) */
-
-        /* for(let i = question_counter.innerHTML; i < loadedQuestions.length; i++) {
-            answers_text[i-1].push(loadedQuestions[i-1].answers)
-        } */
-
-        //console.log(loadedQuestions[i-1].answers);
-
-        
-        
-       /*  answers_text.forEach(function(answer) {
-            answer.added = true;
-            
-        }) */
-    
-        
-        //Iterate through all ten loaded questions
-       /*  for(let i = 0; i < loadedQuestions.length; i++) { 
-            let answers_arr = [];
-            answers_arr.push(loadedQuestions[i].answers);
-            console.log(answers_arr);
-        } */
+ 
     
     }
