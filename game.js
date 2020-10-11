@@ -30,8 +30,8 @@ class LoadQuestions {
         let choice6 = document.getElementById("choice6");
         
         let question_counter = document.getElementById("question-counter");
-        question_counter.innerHTML = 1;
         let q = question_counter.innerHTML
+        question_counter.innerHTML = q;
         let question_text = document.getElementById("question");
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
         let load_answ_arr = (Object.values(loadedQuestions[q-1].answers));
@@ -52,6 +52,7 @@ class LoadQuestions {
             answer_e_correct: "false",
             answer_f_correct: "false"
         }
+        
         answer_obj = loadedQuestions[0].answers
         
         question_text.innerHTML = loadedQuestions[q-1].question;   
