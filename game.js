@@ -36,9 +36,9 @@ class LoadQuestions {
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
         let load_answ_arr = (Object.values(loadedQuestions[q-1].answers));
 
-       
+        
 
-        //let load_corr_answ_arr = (Object.values(loadedQuestions[i-1].correct_answers));
+        
         let curr_question = {};
         curr_question = loadedQuestions[q-1];
         let answer_obj = {};
@@ -85,9 +85,12 @@ class LoadQuestions {
             user_answers.answer_f_correct = "true";
         })
 
+        
+
         let nextQuestBtn = document.getElementById("next-question");
         nextQuestBtn.addEventListener("click", function() {
             getNewQuestion();
+            
             //update counter to display next question
         })
 
@@ -96,7 +99,7 @@ class LoadQuestions {
         function getNewQuestion() {
     
             
-
+            
             
 
         }
