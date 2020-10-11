@@ -63,10 +63,27 @@ class LoadQuestions {
  
         choice1.addEventListener("click", function() {
             user_answers.answer_a_correct = "true";
-            console.log(user_answers);
-            console.log(curr_question.correct_answers);
         })
         
+        choice2.addEventListener("click", function() {
+            user_answers.answer_b_correct = "true";
+        })
+
+        choice3.addEventListener("click", function() {
+            user_answers.answer_c_correct = "true";
+        })
+
+        choice4.addEventListener("click", function() {
+            user_answers.answer_d_correct = "true";
+        })
+
+        choice5.addEventListener("click", function() {
+            user_answers.answer_e_correct = "true";
+        })
+
+        choice6.addEventListener("click", function() {
+            user_answers.answer_f_correct = "true";
+        })
 
         let nextQuestBtn = document.getElementById("next-question");
         nextQuestBtn.addEventListener("click", function() {
