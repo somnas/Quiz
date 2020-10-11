@@ -52,7 +52,7 @@ p.hud-main-text {
 
 .container {
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
     align-items: center;
