@@ -9,7 +9,7 @@
 
 .player {
     display: flex;
-    margin-top: 8rem;
+    margin-top: 150px;
 }
 
 .choice-container:hover {
