@@ -33,18 +33,18 @@ class LoadQuestions {
         let i = question_counter.innerHTML
         let question_text = document.getElementById("question");
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
-        let curr_question = {};
         let load_answ_arr = (Object.values(loadedQuestions[i-1].answers));
-        let load_corr_answ_arr = (Object.values(loadedQuestions[i-1].correct_answers));
+        //let load_corr_answ_arr = (Object.values(loadedQuestions[i-1].correct_answers));
+        let curr_question = {};
         curr_question = loadedQuestions[i-1];
         let answer_obj = {};
         let user_answers = {
-            answer_a: false,
-            answer_b: false, 
-            answer_c: false,
-            answer_d: false,
-            answer_e: false,
-            answer_f: false
+            answer_a_correct: "false",
+            answer_b_correct: "false", 
+            answer_c_correct: "false",
+            answer_d_correct: "false",
+            answer_e_correct: "false",
+            answer_f_correct: "false"
         }
         answer_obj = loadedQuestions[0].answers
 
@@ -58,17 +58,24 @@ class LoadQuestions {
         }
  
         choice1.addEventListener("click", function() {
-            console.log("hello");
-            answer_obj.answer_a_correct = true;
+            user_answers.answer_a_correct = "true";
+            console.log(user_answers);
+            console.log(curr_question.correct_answers);
         })
 
         //console.log(answer_obj);
-        console.log(curr_question);
-        console.log(user_answers);
+        //console.log(curr_question);
+        //console.log(user_answers);
         //console.log(load_corr_answ_arr);
         //console.log(load_answ_arr);
         //console.log(loadedQuestions);
         
     }
 
-  
+class NewQuestion {
+    
+}
+
+function getNewQuestion() {
+    
+}
