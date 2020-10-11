@@ -28,6 +28,8 @@ class LoadQuestions {
     
     async function loadQuestions() {
         let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
+        
+        
         let question_counter = document.getElementById("question-counter");
         question_counter.innerHTML = 1;
         let q = question_counter.innerHTML
