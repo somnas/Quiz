@@ -63,6 +63,11 @@ class LoadQuestions {
             console.log(curr_question.correct_answers);
         })
 
+        let nextQuestBtn = document.getElementById("next-question");
+        nextQuestBtn.addEventListener("click", function() {
+        console.log("hello");
+        })
+
         //console.log(answer_obj);
         //console.log(curr_question);
         //console.log(user_answers);
