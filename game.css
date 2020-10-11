@@ -7,6 +7,11 @@
     background-color: white;
 }
 
+.player {
+    display: flex;
+    margin-top: 8rem;
+}
+
 .choice-container:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
@@ -34,11 +39,13 @@
     padding: 1.5rem 2.5rem;
     background-color: #56a5eb;
     color: white;
+    font-size: 2rem;
 }
 
 .choice-text {
     padding: 1.5rem;
     width: 100%;
+    font-size: 1.5rem;
 }
 
 .correct {
@@ -52,6 +59,7 @@
 #hud {
     display: flex;
     justify-content: space-between;
+    height: 150px;
 }
 
 .hud-prefix {
