@@ -30,13 +30,13 @@ class LoadQuestions {
         let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
         let question_counter = document.getElementById("question-counter");
         question_counter.innerHTML = 1;
-        let i = question_counter.innerHTML
+        let q = question_counter.innerHTML
         let question_text = document.getElementById("question");
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
-        let load_answ_arr = (Object.values(loadedQuestions[i-1].answers));
+        let load_answ_arr = (Object.values(loadedQuestions[q-1].answers));
         //let load_corr_answ_arr = (Object.values(loadedQuestions[i-1].correct_answers));
         let curr_question = {};
-        curr_question = loadedQuestions[i-1];
+        curr_question = loadedQuestions[q-1];
         let answer_obj = {};
         let user_answers = {
             answer_a_correct: "false",
@@ -50,7 +50,7 @@ class LoadQuestions {
 
         //console.log(answer_obj);
      
-        question_text.innerHTML = loadedQuestions[i-1].question;   
+        question_text.innerHTML = loadedQuestions[q-1].question;   
         
         for(i = 0; i < load_answ_arr.length; i++) {
             answers_text[i].innerHTML = load_answ_arr[i];
@@ -62,12 +62,28 @@ class LoadQuestions {
             console.log(user_answers);
             console.log(curr_question.correct_answers);
         })
+        
 
         let nextQuestBtn = document.getElementById("next-question");
         nextQuestBtn.addEventListener("click", function() {
-        console.log("hello");
+            getNewQuestion();
         })
 
+        function getNewQuestion() {
+            
+            q++;
+            console.log(q);
+            console.log(i);
+            console.log(load_answ_arr);
+            q = question_counter.innerHTML
+            question_text.innerHTML = loadedQuestions[q-1].question;
+
+            for(i = 1; i < load_answ_arr.length; i++) {
+                answers_text[i].innerHTML = load_answ_arr[i];
+                //add if-statement to hide empty choices
+            }
+            
+        }
         //console.log(answer_obj);
         //console.log(curr_question);
         //console.log(user_answers);
@@ -81,6 +97,3 @@ class NewQuestion {
     
 }
 
-function getNewQuestion() {
-    
-}
