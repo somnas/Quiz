@@ -85,7 +85,7 @@ class LoadQuestions {
             user_answers_obj.answer_f_correct = "true";
         })
 
-        
+        console.log(loadedQuestions[q-1].correct_answers);
 
         correctQuestBtn.addEventListener("click", function() {
             isEqual(user_answers_obj, correct_answers_obj);
