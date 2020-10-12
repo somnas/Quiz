@@ -30,7 +30,7 @@ h1 > span {
 }
 
 h2 {
-    font-size: 4.2rem;
+    font-size: 2.2rem;
     margin-bottom: 4rem;
     font-weight: 700;
 }
@@ -40,11 +40,19 @@ h3 {
     font-weight: 500;
 }
 
+p.hud-main-text {
+    font-size: 5.4rem;
+    color: #56a5eb;
+    margin-bottom: 5rem;
+}
+
+
+
 /*UTILITIES*/
 
 .container {
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,6 +88,18 @@ h3 {
 }
 
 /*BUTTONS*/
+
+.input {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #56a5eb;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #56a5eb;
+    background-color: white;
+}
 
 .btn {
     font-size: 1.8rem;

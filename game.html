@@ -10,43 +10,52 @@
 <body>
     <div class="container">
         <div id="game" class="justify-center flex-column">
+            <div class="player">
+                <h2 id="display-name">name from html</h2>
+            </div>
             <div id="hud">
                 <div id="hud-item">
                     <p class="hud-prefix">Question</p>
-                    <h1 class="hud-main-text" id="question-counter"></h1>                    
+                    <p class="hud-main-text" id="question-counter">1</p>                    
                 </div>
                 <div id="hud-item">
                     <p class="hud-prefix">Score</p>
-                    <h1 class="hud-main-text" id="score"></h1>                    
+                    <p class="hud-main-text" id="score">0</p>                    
                 </div>
             </div>
-            <h2 id="question">What is the answer to this question?</h2>
+            <h2 id="question">HTML-question?</h2>
             <div class="choice-container">
                 <p class="choice-prefix">A</p>
-                <p class="choice-text" data-number="1">Choice 1</p>
+                <p class="choice-text" id="choice1" data-letter="_a">Choice 1 from html</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">B</p>
-                <p class="choice-text" data-number="2">Choice 2</p>
+                <p class="choice-text" id="choice2" data-letter="_b">Choice 2 from html</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">C</p>
-                <p class="choice-text" data-number="3">Choice 3</p>
+                <p class="choice-text" id="choice3" data-letter="_c">Choice 3 from html</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">D</p>
-                <p class="choice-text" data-number="4">Choice 4</p>
+                <p class="choice-text" id="choice4" data-letter="_d">Choice 4 from html</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">E</p>
-                <p class="choice-text" data-number="5">Choice 5</p>
+                <p class="choice-text" id="choice5" data-letter="_e">Choice 5 from html</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">F</p>
-                <p class="choice-text" data-number="6">Choice 6</p>
+                <p class="choice-text" id="choice6" data-letter="_f">Choice 6 from html</p>
+            </div>
+            <div class="correct-questions">
+                <p id="correct-question-btn">Correct Answers</p>
+            </div>
+            <div class="question-button">
+                <p id="next-question">Next Question</p>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
