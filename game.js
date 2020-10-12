@@ -62,27 +62,32 @@ class LoadQuestions {
         
         choice1.addEventListener("click", function() {
             user_answers_obj.answer_a_correct = "true";
-            
+            choice1.classList.add("clicked");
         })
         
         choice2.addEventListener("click", function() {
             user_answers_obj.answer_b_correct = "true";
+            choice2.classList.add("clicked");
         })
 
         choice3.addEventListener("click", function() {
             user_answers_obj.answer_c_correct = "true";
+            choice3.classList.add("clicked");
         })
 
         choice4.addEventListener("click", function() {
             user_answers_obj.answer_d_correct = "true";
+            choice4.classList.add("clicked");
         })
 
         choice5.addEventListener("click", function() {
             user_answers_obj.answer_e_correct = "true";
+            choice5.classList.add("clicked");
         })
 
         choice6.addEventListener("click", function() {
             user_answers_obj.answer_f_correct = "true";
+            choice6.classList.add("clicked");
         })
 
         //console.log(loadedQuestions[q-1].correct_answers);
@@ -132,7 +137,11 @@ class LoadQuestions {
                 answers_text[i].innerHTML = load_answ_arr[i];
                 //add if-statement to hide empty choices
             }
-            
+            //add if-statement to remove button next question if at end of question array
+            if(q == loadedQuestions.length) {
+                console.log("the end");
+                nextQuestBtn.classList.add("hide");
+            }
         }
         
        
