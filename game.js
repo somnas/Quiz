@@ -39,10 +39,6 @@ class LoadQuestions {
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
         let load_answ_arr = (Object.values(loadedQuestions[q-1].answers));
 
-        
-
-        
-        
         curr_question = loadedQuestions[q-1];
         correct_answers_obj = loadedQuestions[q-1].correct_answers
         
@@ -89,7 +85,7 @@ class LoadQuestions {
             user_answers_obj.answer_f_correct = "true";
         })
 
-        console.log(loadedQuestions[0]);
+        
 
         correctQuestBtn.addEventListener("click", function() {
             isEqual(user_answers_obj, correct_answers_obj);
@@ -114,13 +110,6 @@ class LoadQuestions {
             score.innerHTML++;
             return true;
        }
-
-
-       
-       
-
-
-
         
         nextQuestBtn.addEventListener("click", function() {
             getNewQuestion();
@@ -129,15 +118,12 @@ class LoadQuestions {
         })
 
         //getNewQuestion();
-
+        
         function getNewQuestion() {
-    
+            console.log("hello");
         }
         
-
-        
-      
-        
+       
     }
 
 class NewQuestion {
