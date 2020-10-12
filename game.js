@@ -100,6 +100,10 @@ class LoadQuestions {
 
         console.log(loadedQuestions[0]);
 
+        correctQuestBtn.addEventListener("click", function() {
+            isEqual(user_answers_obj, correct_answers_obj);
+        })
+
         isEqual = (obj1, obj2) => {
             const obj1Keys = Object.keys(obj1); 
             const obj2Keys = Object.keys(obj2);
@@ -117,12 +121,12 @@ class LoadQuestions {
             }
 
             console.log("TRUE");
-           return true;
+            return true;
        }
 
 
        
-       isEqual(user_answers_obj, correct_answers_obj);
+       
 
 
 
