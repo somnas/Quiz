@@ -29,6 +29,7 @@ class LoadQuestions {
         let choice5 = document.getElementById("choice5");
         let choice6 = document.getElementById("choice6");
 
+        let score = document.getElementById("score");
         let nextQuestBtn = document.getElementById("next-question");
         let correctQuestBtn = document.getElementById("correct-question-btn");
         let question_counter = document.getElementById("question-counter");
@@ -54,16 +55,6 @@ class LoadQuestions {
             answer_e_correct: "false",
             answer_f_correct: "false"
         }
-        
-        test_answers_obj = {
-            answer_a_correct: "false",
-            answer_b_correct: "false", 
-            answer_c_correct: "false",
-            answer_d_correct: "false",
-            answer_e_correct: "false",
-            answer_f_correct: "false"
-        }
-        
         
 
         question_text.innerHTML = loadedQuestions[q-1].question;   
@@ -120,7 +111,7 @@ class LoadQuestions {
                 }
             }
 
-            console.log("TRUE");
+            score.innerHTML++;
             return true;
        }
 
