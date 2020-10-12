@@ -28,7 +28,9 @@ class LoadQuestions {
         let choice4 = document.getElementById("choice4");
         let choice5 = document.getElementById("choice5");
         let choice6 = document.getElementById("choice6");
-        
+
+        let nextQuestBtn = document.getElementById("next-question");
+        let correctQuestBtn = document.getElementById("correct-question-btn");
         let question_counter = document.getElementById("question-counter");
         let q = question_counter.innerHTML
         question_counter.innerHTML = q;
@@ -62,29 +64,7 @@ class LoadQuestions {
             answer_f_correct: "false"
         }
         
-        isEqual = (obj1, obj2) => {
-             const obj1Keys = Object.keys(obj1); 
-             const obj2Keys = Object.keys(obj2);
-
-             if (obj1Keys.length !== obj2Keys.length) {
-                console.log("length: FALSE"); 
-                return false;
-             }
-
-             for (let objKey of obj1Keys) {
-                 if (obj1[objKey] !== obj2[objKey]) {
-                    console.log("values: FALSE");
-                    return false;
-                 }
-             }
-
-             console.log("TRUE");
-            return true;
-        }
-
-
         
-        isEqual(user_answers_obj, correct_answers_obj);
 
         question_text.innerHTML = loadedQuestions[q-1].question;   
         
@@ -120,7 +100,33 @@ class LoadQuestions {
 
         console.log(loadedQuestions[0]);
 
-        let nextQuestBtn = document.getElementById("next-question");
+        isEqual = (obj1, obj2) => {
+            const obj1Keys = Object.keys(obj1); 
+            const obj2Keys = Object.keys(obj2);
+
+            if (obj1Keys.length !== obj2Keys.length) {
+               console.log("length: FALSE"); 
+               return false;
+            }
+
+            for (let objKey of obj1Keys) {
+                if (obj1[objKey] !== obj2[objKey]) {
+                   console.log("values: FALSE");
+                   return false;
+                }
+            }
+
+            console.log("TRUE");
+           return true;
+       }
+
+
+       
+       isEqual(user_answers_obj, correct_answers_obj);
+
+
+
+        
         nextQuestBtn.addEventListener("click", function() {
             getNewQuestion();
             
@@ -131,10 +137,6 @@ class LoadQuestions {
 
         function getNewQuestion() {
     
-            
-            
-            
-
         }
         
 
