@@ -39,12 +39,12 @@ class LoadQuestions {
         
 
         
-        let curr_question = {};
-        curr_question = loadedQuestions[q-1];
-        let answer_obj = {};
-
         
-        let user_answers = {
+        curr_question = loadedQuestions[q-1];
+        correct_answers_obj = loadedQuestions[q-1].correct_answers
+        
+        
+        user_answers_obj = {
             answer_a_correct: "false",
             answer_b_correct: "false", 
             answer_c_correct: "false",
@@ -53,8 +53,39 @@ class LoadQuestions {
             answer_f_correct: "false"
         }
         
-        answer_obj = loadedQuestions[0].answers
+        test_answers_obj = {
+            answer_a_correct: "false",
+            answer_b_correct: "false", 
+            answer_c_correct: "false",
+            answer_d_correct: "false",
+            answer_e_correct: "false",
+            answer_f_correct: "false"
+        }
         
+        isEqual = (obj1, obj2) => {
+             const obj1Keys = Object.keys(obj1); 
+             const obj2Keys = Object.keys(obj2);
+
+             if (obj1Keys.length !== obj2Keys.length) {
+                console.log("length: FALSE"); 
+                return false;
+             }
+
+             for (let objKey of obj1Keys) {
+                 if (obj1[objKey] !== obj2[objKey]) {
+                    console.log("values: FALSE");
+                    return false;
+                 }
+             }
+
+             console.log("TRUE");
+            return true;
+        }
+
+
+        
+        isEqual(user_answers_obj, correct_answers_obj);
+
         question_text.innerHTML = loadedQuestions[q-1].question;   
         
         for(i = 0; i < load_answ_arr.length; i++) {
@@ -63,30 +94,31 @@ class LoadQuestions {
         }
 
         choice1.addEventListener("click", function() {
-            user_answers.answer_a_correct = "true";
+            user_answers_obj.answer_a_correct = "true";
+            
         })
         
         choice2.addEventListener("click", function() {
-            user_answers.answer_b_correct = "true";
+            user_answers_obj.answer_b_correct = "true";
         })
 
         choice3.addEventListener("click", function() {
-            user_answers.answer_c_correct = "true";
+            user_answers_obj.answer_c_correct = "true";
         })
 
         choice4.addEventListener("click", function() {
-            user_answers.answer_d_correct = "true";
+            user_answers_obj.answer_d_correct = "true";
         })
 
         choice5.addEventListener("click", function() {
-            user_answers.answer_e_correct = "true";
+            user_answers_obj.answer_e_correct = "true";
         })
 
         choice6.addEventListener("click", function() {
-            user_answers.answer_f_correct = "true";
+            user_answers_obj.answer_f_correct = "true";
         })
 
-        
+        console.log(loadedQuestions[0]);
 
         let nextQuestBtn = document.getElementById("next-question");
         nextQuestBtn.addEventListener("click", function() {
@@ -107,12 +139,7 @@ class LoadQuestions {
         
 
         
-        //console.log(answer_obj);
-        //console.log(curr_question);
-        //console.log(user_answers);
-        //console.log(load_corr_answ_arr);
-        //console.log(load_answ_arr);
-        //console.log(loadedQuestions);
+      
         
     }
 
