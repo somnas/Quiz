@@ -59,6 +59,9 @@ class LoadQuestions {
             answers_text[i].innerHTML = load_answ_arr[i];
             //add if-statement to hide empty choices
         }
+        
+
+        
 
         choice1.addEventListener("click", function() {
             user_answers_obj.answer_a_correct = "true";
@@ -85,7 +88,7 @@ class LoadQuestions {
             user_answers_obj.answer_f_correct = "true";
         })
 
-        console.log(loadedQuestions[q-1].correct_answers);
+        //console.log(loadedQuestions[q-1].correct_answers);
 
         correctQuestBtn.addEventListener("click", function() {
             isEqual(user_answers_obj, correct_answers_obj);
@@ -111,6 +114,8 @@ class LoadQuestions {
             return true;
        }
         
+       
+
         nextQuestBtn.addEventListener("click", function() {
             getNewQuestion();
             
@@ -120,7 +125,17 @@ class LoadQuestions {
         //getNewQuestion();
         
         function getNewQuestion() {
-            console.log("hello");
+            
+            q++;
+            question_text.innerHTML = loadedQuestions[q-1].question; 
+            
+            load_answ_arr = (Object.values(loadedQuestions[q-1].answers));
+
+            for(i = 0; i < load_answ_arr.length; i++) {
+                answers_text[i].innerHTML = load_answ_arr[i];
+                //add if-statement to hide empty choices
+            }
+            
         }
         
        
