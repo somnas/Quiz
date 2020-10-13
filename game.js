@@ -1,14 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
-   
-    document.getElementById("display-name").innerHTML = localStorage.getItem("player");
-    
+document.addEventListener("DOMContentLoaded", function() {   
+    document.getElementById("display-name").innerHTML = localStorage.getItem("player");    
     loadQuestions();
 })
 
-
-class LoadQuestions {
-
-}
 
     async function fetchData(url) {
         
@@ -142,7 +136,5 @@ class LoadQuestions {
         
     }
 
-class NewQuestion {
-    
-}
+
 
