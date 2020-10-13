@@ -62,35 +62,35 @@ class LoadQuestions {
         
         choice1.addEventListener("click", function() {
             user_answers_obj.answer_a_correct = "true";
-            choice1.classList.add("clicked");
+            //choice1.classList.add("clicked");
         })
         
         choice2.addEventListener("click", function() {
             user_answers_obj.answer_b_correct = "true";
-            choice2.classList.add("clicked");
+            //choice2.classList.add("clicked");
         })
 
         choice3.addEventListener("click", function() {
             user_answers_obj.answer_c_correct = "true";
-            choice3.classList.add("clicked");
+            //choice3.classList.add("clicked");
         })
 
         choice4.addEventListener("click", function() {
             user_answers_obj.answer_d_correct = "true";
-            choice4.classList.add("clicked");
+            //choice4.classList.add("clicked");
         })
 
         choice5.addEventListener("click", function() {
             user_answers_obj.answer_e_correct = "true";
-            choice5.classList.add("clicked");
+            //choice5.classList.add("clicked");
         })
 
         choice6.addEventListener("click", function() {
             user_answers_obj.answer_f_correct = "true";
-            choice6.classList.add("clicked");
+            //choice6.classList.add("clicked");
         })
 
-        //console.log(loadedQuestions[q-1].correct_answers);
+       
 
         correctQuestBtn.addEventListener("click", function() {
             isEqual(user_answers_obj, correct_answers_obj);
@@ -101,13 +101,13 @@ class LoadQuestions {
             const obj2Keys = Object.keys(obj2);
 
             if (obj1Keys.length !== obj2Keys.length) {
-               console.log("length: FALSE"); 
+               //console.log("length: FALSE"); 
                return false;
             }
 
             for (let objKey of obj1Keys) {
                 if (obj1[objKey] !== obj2[objKey]) {
-                   console.log("values: FALSE");
+                   //console.log("values: FALSE");
                    return false;
                 }
             }
@@ -127,7 +127,7 @@ class LoadQuestions {
         //getNewQuestion();
         
         function getNewQuestion() {
-            
+            isEqual(user_answers_obj, correct_answers_obj);
             q++;
             question_text.innerHTML = loadedQuestions[q-1].question; 
             
