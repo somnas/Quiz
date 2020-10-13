@@ -20,7 +20,7 @@ class LoadQuestions {
     }
     
     async function loadQuestions() {
-        let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=2");
+        let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
         
         let choice1 = document.getElementById("choice1");
         let choice2 = document.getElementById("choice2");
@@ -31,7 +31,7 @@ class LoadQuestions {
 
         let score = document.getElementById("score");
         let nextQuestBtn = document.getElementById("next-question");
-        let buttons = document.getElementById("buttons");
+        let end_btn = document.getElementById("end-game");
         let question_counter = document.getElementById("question-counter");
         let q = question_counter.innerHTML
         question_counter.innerHTML = q;
@@ -138,8 +138,7 @@ class LoadQuestions {
                 //add if-statement to hide empty choices
             }
             //add if-statement to remove button next question if at end of question array
-            if(q == loadedQuestions.length) {
-                console.log("the end");
+            if(q == loadedQuestions.length) {                
                 nextQuestBtn.classList.add("hide");
                 localStorage.setItem("score", score.innerHTML);
                 
@@ -147,8 +146,11 @@ class LoadQuestions {
             }
             
         }
+
+        end_btn.addEventListener("click", function() {
+            localStorage.setItem("score", score.innerHTML);
+        })
         
-       
     }
 
 class NewQuestion {
