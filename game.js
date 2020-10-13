@@ -40,7 +40,7 @@ class LoadQuestions {
         let load_answ_arr = (Object.values(loadedQuestions[q-1].answers));
 
         curr_question = loadedQuestions[q-1];
-        correct_answers_obj = loadedQuestions[q-1].correct_answers
+        correct_answers_obj = loadedQuestions[q-1].correct_answers;
         
         
         user_answers_obj = {
@@ -91,7 +91,7 @@ class LoadQuestions {
         })
 
        
-
+        console.log(loadedQuestions[q-1].correct_answers);
        /*  correctQuestBtn.addEventListener("click", function() {
             isEqual(user_answers_obj, correct_answers_obj);
         }) */
@@ -143,10 +143,7 @@ class LoadQuestions {
                 nextQuestBtn.classList.add("hide");
                 localStorage.setItem("score", score.innerHTML);
                 
-                let endBtn = document.createElement("p");
-                endBtn.textContent = "End Game";
-                buttons.appendChild(endBtn)
-                endBtn.id = "end_game";
+                                
             }
             
         }
