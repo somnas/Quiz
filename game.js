@@ -141,6 +141,7 @@ class LoadQuestions {
             if(q == loadedQuestions.length) {
                 console.log("the end");
                 nextQuestBtn.classList.add("hide");
+                localStorage.setItem("score", score.innerHTML);
             }
         }
         
