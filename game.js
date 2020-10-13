@@ -31,7 +31,7 @@ class LoadQuestions {
 
         let score = document.getElementById("score");
         let nextQuestBtn = document.getElementById("next-question");
-        let correctQuestBtn = document.getElementById("correct-question-btn");
+        let buttons = document.getElementById("buttons");
         let question_counter = document.getElementById("question-counter");
         let q = question_counter.innerHTML
         question_counter.innerHTML = q;
@@ -142,7 +142,13 @@ class LoadQuestions {
                 console.log("the end");
                 nextQuestBtn.classList.add("hide");
                 localStorage.setItem("score", score.innerHTML);
+                
+                let endBtn = document.createElement("p");
+                endBtn.textContent = "End Game";
+                buttons.appendChild(endBtn)
+                endBtn.id = "end_game";
             }
+            
         }
         
        
