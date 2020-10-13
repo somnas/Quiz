@@ -7,6 +7,10 @@
     background-color: white;
 }
 
+.clicked {
+    background-color: grey;
+}
+
 .player {
     display: flex;
     margin-top: 150px;
@@ -19,7 +23,7 @@
     transition: transform 150ms;
 }
 
-.question-button {
+#correct-question-btn, #next-question {
     display: flex;
     margin-bottom: 0.5rem;
     width: 40%;
@@ -28,14 +32,14 @@
     background-color: white;
 }
 
-.question-button:hover {
+#correct-question-btn:hover, #next-question:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
     transform: translate(-0.1rem);
     transition: transform 150ms;
 }
 
-.correct-questions {
+#end-game {
     display: flex;
     margin-bottom: 0.5rem;
     width: 40%;
@@ -44,7 +48,7 @@
     background-color: white;
 }
 
-.correct-questions:hover {
+#end-game:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
     transform: translate(-0.1rem);
@@ -85,4 +89,8 @@
 
 .hud-main-text {
     text-align: center;
+}
+
+#next-question.hide {
+    display: none;
 }
