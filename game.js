@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let question_text = document.getElementById("question");
         let answers_text = Array.from(document.getElementsByClassName("choice-text"));
         let load_answ_arr = (Object.values(loadedQuestions[q-1].answers));
+        let numberOfAnswers_arr = [];
 
         curr_question = loadedQuestions[q-1];
         correct_answers_obj = loadedQuestions[q-1].correct_answers;
@@ -105,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function() {
        
        //click triggering next question function
         nextQuestBtn.addEventListener("click", function() {
+            numberOfAnswers_arr.push(1);            
             getNewQuestion();           
-            
         })
 
        
@@ -117,14 +118,16 @@ document.addEventListener("DOMContentLoaded", function() {
             question_text.innerHTML = loadedQuestions[q-1].question; 
             
             load_answ_arr = (Object.values(loadedQuestions[q-1].answers)); 
+            console.log(load_answ_arr);
 
+            //loop through array of answer choices
             for(i = 0; i < load_answ_arr.length; i++) {
                 answers_text[i].innerHTML = load_answ_arr[i];
                 //TO DO: add if-statement to hide empty choices
             }
             //if at last question, remove next question button
             if(q == loadedQuestions.length) {                
-                nextQuestBtn.classList.add("hide");                         
+                nextQuestBtn.classList.add("hide");                       
                                 
             }
             
@@ -132,6 +135,11 @@ document.addEventListener("DOMContentLoaded", function() {
         //save the score in local storage on click end game button
         end_btn.addEventListener("click", function() {
             localStorage.setItem("score", score.innerHTML);
+            let sum_questions = numberOfAnswers_arr.reduce((total, num) => {
+                return total + num;
+            }, 0); 
+            localStorage.setItem("sum_questions", sum_questions);
+            
         })
         
     }
