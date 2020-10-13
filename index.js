@@ -4,19 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     playBtn.addEventListener("click", newPlayer);
 
     function newPlayer(player) {
-       //let player_1 = 
-       new Player;
-       
-    }
-    
+       new Player;       
+    }    
 })
 
 class Player {
-    constructor() {
-        /* this.name = document.getElementById("player-name").value;
-        this.score = 0; */
-        localStorage.setItem("player", document.getElementById("player-name").value);
-        
+    constructor() {        
+        localStorage.setItem("player", document.getElementById("player-name").value);        
     }
     
 }
