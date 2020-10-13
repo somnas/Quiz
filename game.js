@@ -20,7 +20,7 @@ class LoadQuestions {
     }
     
     async function loadQuestions() {
-        let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=10");
+        let loadedQuestions = await fetchData("https://quizapi.io/api/v1/questions?apiKey=ZaUKDEKaG02Lc411UFJe6pGrhokdPQw8TjZxlaTk&limit=2");
         
         let choice1 = document.getElementById("choice1");
         let choice2 = document.getElementById("choice2");
