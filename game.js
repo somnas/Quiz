@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     loadQuestions();
 })
 
-//Use if-statements to hide answers = null
 
 class LoadQuestions {
 
@@ -42,7 +41,7 @@ class LoadQuestions {
         curr_question = loadedQuestions[q-1];
         correct_answers_obj = loadedQuestions[q-1].correct_answers;
         
-        
+        //creating object with values matching the correct answers in the API to calculate score
         user_answers_obj = {
             answer_a_correct: "false",
             answer_b_correct: "false", 
@@ -90,24 +89,17 @@ class LoadQuestions {
             //choice6.classList.add("clicked");
         })
 
-       
-        console.log(loadedQuestions[q-1].correct_answers);
-       /*  correctQuestBtn.addEventListener("click", function() {
-            isEqual(user_answers_obj, correct_answers_obj);
-        }) */
-
+        //checking if user answer matches correct answer
         isEqual = (obj1, obj2) => {
             const obj1Keys = Object.keys(obj1); 
             const obj2Keys = Object.keys(obj2);
 
-            if (obj1Keys.length !== obj2Keys.length) {
-               //console.log("length: FALSE"); 
+            if (obj1Keys.length !== obj2Keys.length) {               
                return false;
             }
 
             for (let objKey of obj1Keys) {
-                if (obj1[objKey] !== obj2[objKey]) {
-                   //console.log("values: FALSE");
+                if (obj1[objKey] !== obj2[objKey]) {                   
                    return false;
                 }
             }
@@ -117,15 +109,14 @@ class LoadQuestions {
        }
         
        
-
+       //click triggering next question function
         nextQuestBtn.addEventListener("click", function() {
-            getNewQuestion();
+            getNewQuestion();           
             
-            //update counter to display next question
         })
 
-        //getNewQuestion();
-        
+       
+        //running function to check correct answer and loading a new question
         function getNewQuestion() {
             isEqual(user_answers_obj, correct_answers_obj);
             q++;
@@ -135,18 +126,16 @@ class LoadQuestions {
 
             for(i = 0; i < load_answ_arr.length; i++) {
                 answers_text[i].innerHTML = load_answ_arr[i];
-                //add if-statement to hide empty choices
+                //TO DO: add if-statement to hide empty choices
             }
-            //add if-statement to remove button next question if at end of question array
+            //if at last question, remove next question button
             if(q == loadedQuestions.length) {                
-                nextQuestBtn.classList.add("hide");
-                localStorage.setItem("score", score.innerHTML);
-                
+                nextQuestBtn.classList.add("hide");                         
                                 
             }
             
         }
-
+        //save the score in local storage on click end game button
         end_btn.addEventListener("click", function() {
             localStorage.setItem("score", score.innerHTML);
         })
