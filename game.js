@@ -92,9 +92,9 @@ class LoadQuestions {
 
        
 
-        correctQuestBtn.addEventListener("click", function() {
+       /*  correctQuestBtn.addEventListener("click", function() {
             isEqual(user_answers_obj, correct_answers_obj);
-        })
+        }) */
 
         isEqual = (obj1, obj2) => {
             const obj1Keys = Object.keys(obj1); 
